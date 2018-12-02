@@ -1,3 +1,6 @@
+// TIME START: 10:00am 02/12/18
+// TIME END: 11:40am 02/12/18
+// DURATION: 1hr 40minutes
 
 /**
  * The premise here is breaking down each state of what we are going to do
