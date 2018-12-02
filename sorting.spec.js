@@ -11,12 +11,26 @@ describe("Sorting", () => {
 
         sorting([1,2,3,4])
     })
-    it("should output yes and return 1 4 to swap", () => {
+    it("[4, 2, 3, 1] should output yes and return 1 4 to swap", () => {
         console.log = jest.fn(output => {
             expect(output).toEqual(`yes\nswap 1 4`)
         })
 
         sorting([4, 2, 3, 1])
+    })
+    it("[4, 2, 2, 1] should output yes and return 1 4 to swap", () => {
+        console.log = jest.fn(output => {
+            expect(output).toEqual(`yes\nswap 1 4`)
+        })
+
+        sorting([4, 2, 2, 1])
+    })
+    it("[1, 2, 4, 9, 10, 8] should output no", () => {
+        console.log = jest.fn(output => {
+            expect(output).toEqual(`no`)
+        })
+
+        sorting([1, 2, 4, 9, 10, 8])
     })
     it("should output yes and return 1 2 to swap", () => {
         console.log = jest.fn(output => {
@@ -38,6 +52,20 @@ describe("Sorting", () => {
         })
 
         sorting([1, 5, 4, 3, 2, 6])
+    })
+    it("[1, 2, 4, 10, 9, 8] should output yes swap 4 6", () => {
+        console.log = jest.fn(output => {
+            expect(output).toEqual("yes\nswap 4 6")
+        })
+
+        sorting([1, 2, 4, 10, 9, 8])
+    })
+    it("[1, 2, 4, 10, 9, 8, 7] should output yes reverse 4 7", () => {
+        console.log = jest.fn(output => {
+            expect(output).toEqual("yes reverse 4 7")
+        })
+
+        sorting([1, 2, 4, 10, 9, 8, 7])
     })
 })
 

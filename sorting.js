@@ -1,6 +1,10 @@
+
+/**
+ * The premise here is breaking down each state of what we are going to do
+ * first we check if the array should be swapped, if not check if it can be reversed
+ * @param {Array} arr incoming test array
+ */
 export const sorting = arr => {
-    // in the interest of time, I'm going to use the built in sort method
-    // as well as the reverse method
     let [state, values] = compareSwap(arr)
     if (state === "swap") {
         // convert index numericals to running numbers
@@ -26,6 +30,13 @@ export const sorting = arr => {
     }
 }
 
+/**
+ * We compare the incoming input array with an already sorted control array,
+ * generate a string to maintain what our current state of the function is,
+ * while returning the values of the outcome.
+ * in the interest of time, I'm going to use the built in sort method
+ * @param {Array} test incoming input array
+ */
 export function compareSwap(test) {
     // key = element of array
     // value = index of array
@@ -40,12 +51,18 @@ export function compareSwap(test) {
     const keys = Array.from(hash.keys())
     const values = Array.from(hash.values())
     if (keys.length === 2) {
+        // if only 2 values, I can assume that we just need to swap
         return ["swap", values]
     } else if (keys.length === 0) {
+        // if no values, it's already sorted
         return ["sorted", values]
     } else if (keys.length > 2) {
+        // if there's greater than 2, it might need to be reverse
+        // proceed to reverse comparison
         return ["reverse", values]
     } else {
+        // if it's 1, means that I can't swap or reverse
+        // proceed to output no
         return ["unknown", values]
     }
 }
