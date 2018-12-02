@@ -1,3 +1,7 @@
+// TIME START: 8:00pm 02/12/18
+// TIME END: 10:17pm 02/12/18
+// DURATION: 2hr 17minutes
+
 // 1. we want to traverse the grid ring by ring, to unwrap all the rings into arrays
 // 2. rotate each of those arrays by shifting and pushing
 // 3. fill a grid back up with the unwrapped rings
