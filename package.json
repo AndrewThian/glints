@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --no-cache ./*",
+    "test:factorial": "jest --no-cache ./factorial.spec.js",
+    "test:sorting": "jest --no-cache ./sorting.spec.js",
+    "test:rotation": "jest --no-cache ./rotation.spec.js",
     "watch": "jest --no-cache --watch ./*",
     "lint": "eslint .",
     "lint-test": "eslint . && jest --no-cache ./*"

@@ -1,3 +1,7 @@
+// TIME START: 21:12pm 02/12/18
+// TIME END: 11:15pm 02/12/18
+// DURATION: 1hr 58minutes
+
 /**
  * the function below does not account for numbers larger than 9007199254740991 | Number.MAX_SAFE_INTEGER
  */
