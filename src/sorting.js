@@ -1,3 +1,34 @@
+import readline from "readline";
+
+const config = {
+  input: process.stdin,
+  output: process.stdout,
+  terminal: false
+}
+
+const prefix = ">> "
+const prompt = readline.createInterface(config);
+prompt.setPrompt(prefix)
+prompt.prompt();
+
+const input = [];
+let length;
+let array;
+
+prompt.on("line", cmd => {
+  if (cmd.length > 0) {
+    input.push(cmd.split(" ").map(e => parseInt(e, 10)))
+    if (input.length === 2) {
+      length = input[0][0]
+      array = input[1]
+      
+      sorting(array);
+    }
+  }
+})
+
+// #################### ignore above this line #################### //
+
 // TIME START: 10:00am 02/12/18
 // TIME END: 11:40am 02/12/18
 // DURATION: 1hr 40minutes

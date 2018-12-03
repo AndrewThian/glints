@@ -1,3 +1,23 @@
+import readline from "readline";
+
+const config = {
+  input: process.stdin,
+  output: process.stdout,
+  terminal: false
+}
+
+const prefix = ">> "
+const prompt = readline.createInterface(config);
+prompt.setPrompt(prefix)
+prompt.prompt();
+
+prompt.on("line", value => {
+  const result = factorial(value)
+  console.log(result)
+})
+
+// #################### ignore above this line #################### //
+
 // TIME START: 21:12pm 01/12/18
 // TIME END: 11:15pm 01/12/18
 // DURATION: 1hr 58minutes

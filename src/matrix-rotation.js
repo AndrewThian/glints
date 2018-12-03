@@ -1,3 +1,38 @@
+import readline from "readline";
+
+const config = {
+  input: process.stdin,
+  output: process.stdout,
+  terminal: false
+}
+
+const prefix = ">> "
+const prompt = readline.createInterface(config);
+prompt.setPrompt(prefix)
+prompt.prompt();
+
+const input = [];
+let grid;
+let rows;
+let cols;
+let rotations;
+
+prompt.on("line", cmd => {
+  if (cmd.length > 0) {
+    input.push(cmd.split(" ").map(e => parseInt(e, 10)))
+    if ((input.length - 1) === parseInt(input[0][0], 10)) {
+      rows = parseInt(input[0][0], 10)
+      cols = parseInt(input[0][1], 10)
+      rotations = parseInt(input[0][2], 10)
+
+      grid = input.filter((e, i) => i !== 0)
+      matrixRotation(rows, cols, rotations, grid)
+    }
+  }
+})
+
+// #################### ignore above this line #################### //
+
 // TIME START: 8:00pm 02/12/18
 // TIME END: 10:17pm 02/12/18
 // DURATION: 2hr 17minutes
@@ -156,16 +191,18 @@ export function rotate(arr, times) {
   }
 }
 
-export function createGrid(rows, cols) {
+export function createGrid(rows, cols, data) {
+  console.log(rows, cols)
   const col = cols;
   const row = rows;
   const grid = [];
-  let counter = 1;
+  let counter = 0;
   for (let i = 0; i < row; i++) {
     const column = [];
     grid[i] = column;
     for (let j = 0; j < col; j++) {
-      column.push(counter);
+      console.log(data[counter])
+      column.push(data[counter]);
       counter++;
     }
   }
