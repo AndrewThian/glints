@@ -1,4 +1,4 @@
-##Info
+## Info
 
 ~~It's 10:18pm Sunday. I've completed the first portion of the required assignment. The code runs directly with jest presets.~~
 
@@ -16,7 +16,9 @@
 
 > Matrix-rotation assignment: `echo "4 4 1\n\n1 2 3 4\n\n5 6 7 8\n9 10 11 12\n13 14 15 16" | node lib/matrix-rotation.js`
 
-##how to run
+---
+
+## Scripts
 
 My package.json scripts are as follows:
 
