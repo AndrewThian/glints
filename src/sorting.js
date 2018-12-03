@@ -1,31 +1,31 @@
-import readline from "readline";
+import readline from 'readline';
 
 const config = {
   input: process.stdin,
   output: process.stdout,
-  terminal: false
-}
+  terminal: false,
+};
 
-const prefix = ">> "
+const prefix = '>> ';
 const prompt = readline.createInterface(config);
-prompt.setPrompt(prefix)
+prompt.setPrompt(prefix);
 prompt.prompt();
 
 const input = [];
 let length;
 let array;
 
-prompt.on("line", cmd => {
+prompt.on('line', (cmd) => {
   if (cmd.length > 0) {
-    input.push(cmd.split(" ").map(e => parseInt(e, 10)))
+    input.push(cmd.split(' ').map(e => parseInt(e, 10)));
     if (input.length === 2) {
-      length = input[0][0]
-      array = input[1]
-      
+      length = input[0][0];
+      array = input[1];
+
       sorting(array);
     }
   }
-})
+});
 
 // #################### ignore above this line #################### //
 

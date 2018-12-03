@@ -1,20 +1,20 @@
-import readline from "readline";
+import readline from 'readline';
 
 const config = {
   input: process.stdin,
   output: process.stdout,
-  terminal: false
-}
+  terminal: false,
+};
 
-const prefix = ">> "
+const prefix = '>> ';
 const prompt = readline.createInterface(config);
-prompt.setPrompt(prefix)
+prompt.setPrompt(prefix);
 prompt.prompt();
 
-prompt.on("line", value => {
-  const result = factorial(value)
-  console.log(result)
-})
+prompt.on('line', (value) => {
+  const result = factorial(value);
+  console.log(result);
+});
 
 // #################### ignore above this line #################### //
 

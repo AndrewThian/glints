@@ -1,14 +1,14 @@
-import readline from "readline";
+import readline from 'readline';
 
 const config = {
   input: process.stdin,
   output: process.stdout,
-  terminal: false
-}
+  terminal: false,
+};
 
-const prefix = ">> "
+const prefix = '>> ';
 const prompt = readline.createInterface(config);
-prompt.setPrompt(prefix)
+prompt.setPrompt(prefix);
 prompt.prompt();
 
 const input = [];
@@ -17,19 +17,19 @@ let rows;
 let cols;
 let rotations;
 
-prompt.on("line", cmd => {
+prompt.on('line', (cmd) => {
   if (cmd.length > 0) {
-    input.push(cmd.split(" ").map(e => parseInt(e, 10)))
+    input.push(cmd.split(' ').map(e => parseInt(e, 10)));
     if ((input.length - 1) === parseInt(input[0][0], 10)) {
-      rows = parseInt(input[0][0], 10)
-      cols = parseInt(input[0][1], 10)
-      rotations = parseInt(input[0][2], 10)
+      rows = parseInt(input[0][0], 10);
+      cols = parseInt(input[0][1], 10);
+      rotations = parseInt(input[0][2], 10);
 
-      grid = input.filter((e, i) => i !== 0)
-      matrixRotation(rows, cols, rotations, grid)
+      grid = input.filter((e, i) => i !== 0);
+      matrixRotation(rows, cols, rotations, grid);
     }
   }
-})
+});
 
 // #################### ignore above this line #################### //
 
@@ -192,7 +192,7 @@ export function rotate(arr, times) {
 }
 
 export function createGrid(rows, cols, data) {
-  console.log(rows, cols)
+  console.log(rows, cols);
   const col = cols;
   const row = rows;
   const grid = [];
@@ -201,7 +201,7 @@ export function createGrid(rows, cols, data) {
     const column = [];
     grid[i] = column;
     for (let j = 0; j < col; j++) {
-      console.log(data[counter])
+      console.log(data[counter]);
       column.push(data[counter]);
       counter++;
     }
